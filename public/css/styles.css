@@ -79,12 +79,13 @@
 header.masthead {
   position: relative;
   margin-bottom: 3rem;
-  padding-top: calc(8rem + 57px);
-  padding-bottom: 8rem;
-  background: no-repeat center center;
+  padding-bottom: 10rem;
+  background: no-repeat bottom center;
   background-color: #6c757d;
-  background-size: cover;
+  background-size: auto ;
   background-attachment: scroll;
+  height: 30%;
+  width: 100%;
 }
 header.masthead:before {
   content: "";
@@ -92,7 +93,7 @@ header.masthead:before {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 10;
   background-color: #212529;
   opacity: 0.5;
 }
@@ -620,8 +621,8 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  max-width: 50%;
+  height: 50%;
 }
 
 .img-thumbnail {
