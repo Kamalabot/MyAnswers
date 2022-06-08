@@ -14,3 +14,28 @@ app.set('view engine','ejs');
 app.listen(3000, ()=>{
     console.log('Listening on 3000');
 })
+
+app.get('/',(req,res)=>{
+    res.render('index');
+})
+
+app.get('/about',(req,res)=>{
+    res.render('about');
+})
+
+app.get('/faq',(req,res)=>{
+    res.render('faq');
+})
+
+app.get('/contact',(req,res)=>{
+    res.render('index');
+})
+
+app.get('/blog-home',(req,res)=>{
+    res.render('blog-home');
+})
+
+app.get('/blog-post',(req,res)=>{
+    res.render('blog-post');
+})
+
