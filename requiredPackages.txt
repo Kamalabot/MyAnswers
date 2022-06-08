@@ -1,0 +1,1 @@
+bcrypt body-parser connect-flash ejs express express-fileupload express-session mongoose mongoose-unique-validator nodemon path
