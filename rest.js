@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 
-import QuoraAnswer from './models/QuoraAnswer'
+import { ToMongo } from './models/QuoraAnswer.js'
 
 mongoose.connect('mongodb+srv://bottingup:QFWdUSvs8VfmT6s7@cluster0.j5un5.mongodb.net/CollectedCSVData',{useNewUrlParser:true})
 
 
-QuoraAnswer.find({},(error, quoraans)=>{
+ToMongo.find({},(error, quoraans)=>{
     console.log(error, quoraans)
 })

@@ -1,7 +1,6 @@
-import express from 'express'
-
-const router = express.Router()
-
-router.route('/').get((req,res) =>res.send('Hello world'))
-
-export default router
+export default class MoviesRoute {
+    static configRoutes(router) {
+    router.route('/').get((req, res) => res.send('hello world'));
+    return router;
+    }
+}

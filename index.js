@@ -16,10 +16,10 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 
 
-import { QuoraAnswer } from './models/QuoraAnswer.js'
+import { ToMongo } from './models/QuoraAnswer.js'
 
 app.get('/blog-home',async (req,res)=>{
-    const blogposts = await QuoraAnswer.find({})
+    const blogposts = await ToMongo.find({})
     res.render('blog-home',{
         blogposts
         });
@@ -50,8 +50,9 @@ app.get('/blog-home',(req,res)=>{
     res.render('blog-home');
 })
 
-/*
-app.get('/blog-post',(req,res)=>{
-    res.render('blog-post');
+app.get('/blog-post/:id',async (req,res)=>{
+    const blogpost = await ToMongo.findById(req.params.id)
+    res.render('blog-post',{
+        blogpost
+    })
 })
-*/
