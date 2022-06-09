@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
-const QuoraAnswer = require('./models/QuoraAnswer');
+import QuoraAnswer from './models/QuoraAnswer'
 
-mongoose.connect('mongodb+srv://bottingup:QFWdUSvs8VfmT6s7@cluster0.j5un5.mongodb.net/',{useNewUrlParser:true})
+mongoose.connect('mongodb+srv://bottingup:QFWdUSvs8VfmT6s7@cluster0.j5un5.mongodb.net/CollectedCSVData',{useNewUrlParser:true})
 
 
 QuoraAnswer.find({},(error, quoraans)=>{

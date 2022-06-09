@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
+
 const Schema = mongoose.Schema;
 
 const BlogPostSchema = new Schema({
     Questions: String,
     Answers: String
 });
-
-const QuoraAnswer = mongoose.model('QuoraAnswer',BlogPostSchema);
-module.exports = QuoraAnswer
+//important is how your provide the first arg of the mongoose.model function
+export const QuoraAnswer = mongoose.model('quoraanswer',BlogPostSchema);

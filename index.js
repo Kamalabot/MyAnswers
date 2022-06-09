@@ -1,12 +1,14 @@
-const express = require('express');
-const path = require('path');
-const ejs = require('ejs');
+import express from 'express'
+import path from 'path'
+import ejs from 'ejs'
+
 const app = express();
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://bottingup:QFWdUSvs8VfmT6s7@cluster0.j5un5.mongodb.net/',{useNewUrlParser:true})
+import mongoose from 'mongoose'
+mongoose.connect('mongodb+srv://bottingup:QFWdUSvs8VfmT6s7@cluster0.j5un5.mongodb.net/CollectedCSVData',{useNewUrlParser:true})
 
-const bodyParser = require('body-parser');
+import bodyParser from 'body-parser'
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -14,13 +16,13 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 
 
-const BlogPost = require('./models/QuoraAnswer')
+import { QuoraAnswer } from './models/QuoraAnswer.js'
 
-app.post('/blog-home',async(req,res)=>{
-    const blogposts = await BlogPost.find({});
+app.get('/blog-home',async (req,res)=>{
+    const blogposts = await QuoraAnswer.find({})
     res.render('blog-home',{
         blogposts
-    });
+        });
 })
 
 app.listen(3000, ()=>{
@@ -43,9 +45,11 @@ app.get('/contact',(req,res)=>{
     res.render('contact');
 })
 
+
 app.get('/blog-home',(req,res)=>{
     res.render('blog-home');
 })
+
 /*
 app.get('/blog-post',(req,res)=>{
     res.render('blog-post');
