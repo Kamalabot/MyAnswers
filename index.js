@@ -25,8 +25,12 @@ app.get('/blog-home',async (req,res)=>{
         });
 })
 
-app.listen(3000, ()=>{
-    console.log('Listening on 3000');
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 4000;
+}
+app.listen(port, ()=>{
+    console.log('App listening...')
 })
 
 app.get('/',(req,res)=>{
